@@ -1,0 +1,91 @@
+// TC: TC_A82097
+// Side Nav - Verify modules are highlighted and expanded correctly
+
+import { test, expect } from '@playwright/test';
+import * as fs from 'fs';
+
+test("Side Nav - Verify modules are highlighted and expanded correctly", async ({ page, context }) => {
+  let e2eCampusWideAdminURL = `https://e2e-tests-campuswide.admin.qa-12twenty.com/Login`;
+  let messageAnnouncement = `test`;
+  let date = `8/24/2025`;
+  let e2eCampusWideStudentURL = `https://e2e-tests-campuswide.qa-12twenty.com/Login`;
+  let employerQA = `https://employer.qa-12twenty.com/`;
+  let adminUserLoadTesting = `1`;
+  let repeatEachParameter = `1`;
+  let executionNum = `100`;
+  let e2eLawQAStudentURL = `https://e2e-tests-law.qa-12twenty.com/`;
+
+  // Handle new tabs
+  context.on('page', async (newPage) => { page = newPage; });
+
+  await page.goto(e2eCampusWideAdminURL, { timeout: 90000 });
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.waitForTimeout(4000);
+  const authData = JSON.parse(fs.readFileSync('authCookie12Twenty.json', 'utf-8'));
+  await context.addCookies(authData.cookies || []);
+  await page.waitForTimeout(4000);
+  await page.reload();
+  await page.getByPlaceholder("Email Address").fill("e2e.admin.schooladministrator@campuswide.com");
+  await page.getByPlaceholder("Password").fill("eQ%DEx%j6Cl9");
+  await page.getByRole('button', { name: "Admin Log In" }).click();
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.getByRole('link', { name: "Home" }).click();
+  await page.getByRole('link', { name: "Students & Alumni" }).hover();
+  await page.locator("//A[normalize-space() = \"Students & Alumni\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.waitForLoadState('load');
+  await page.getByRole('link', { name: "Analytics" }).click();
+  await page.getByRole('link', { name: "Students & Alumni" }).click();
+  await page.reload();
+  await page.waitForLoadState('load');
+  await page.waitForTimeout(5000);
+  await page.getByRole('link', { name: "Mentorship" }).hover();
+  await page.locator("//A[normalize-space() = \"Mentorship\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.getByRole('link', { name: "Analytics" }).click();
+  await page.getByRole('link', { name: "Mentorship" }).click();
+  await page.reload();
+  await page.getByRole('link', { name: "Communities" }).click();
+  await page.getByRole('link', { name: "Employers" }).click();
+  await page.getByRole('link', { name: "Contacts" }).click();
+  await page.getByRole('link', { name: "Tasks" }).click();
+  await page.getByRole('link', { name: "Activity Stream" }).click();
+  await page.locator("//a[normalize-space()=\"Reports\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.getByRole('link', { name: "Reporting Dashboards" }).click();
+  await page.getByRole('link', { name: "Custom Reports" }).click();
+  await page.getByRole('link', { name: "12twenty Reports" }).click();
+  await page.getByRole('link', { name: "Standard Reports" }).click();
+  await page.locator("//a[normalize-space()=\"Research Tools\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.getByRole('link', { name: "Outcomes Index" }).click();
+  await page.getByRole('link', { name: "Interview Database" }).click();
+  await page.getByRole('link', { name: "Career Trends" }).click();
+  await page.getByRole('link', { name: "Class Overview" }).click();
+  await page.getByRole('link', { name: "Graduate School" }).click();
+  await page.locator("//a[normalize-space()=\"Job Listings & Interviews\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.getByRole('link', { name: "Job Listings & Interviews" }).click();
+  await page.getByRole('link', { name: "OCI Management" }).click();
+  await page.getByRole('link', { name: "Command Center" }).click();
+  await page.getByRole('link', { name: "Analytics" }).click();
+  await page.getByRole('link', { name: "Student Employment" }).click();
+  await page.locator("//a[normalize-space()=\"Appointments\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.getByRole('link', { name: "Appointments" }).click();
+  await page.getByRole('link', { name: "Analytics" }).click();
+  await page.locator("//a[normalize-space()=\"Events\"]/following::button[contains(@aria-label,\"Expand\")]").click();
+  await page.getByRole('link', { name: "Events" }).click();
+  await page.getByRole('link', { name: "Analytics" }).click();
+  await page.getByRole('link', { name: "Candidate Search" }).click();
+  await page.getByRole('link', { name: "Resume Books" }).click();
+  await page.getByRole('link', { name: "Experiential Learning" }).click();
+  await page.getByRole('link', { name: "Outcomes" }).click();
+  await page.getByRole('link', { name: "Resource Library" }).click();
+  await page.getByRole('link', { name: "Document Review" }).click();
+  await page.getByRole('link', { name: "Help & Support" }).click();
+  await page.getByRole('button', { name: "Close" }).click();
+  await page.getByRole('link', { name: "Orders" }).click();
+  await page.locator("div.side-nav-with-link-and-submenu-container>button.btn.btn-icon.sub-menu-icon").nth(7).click();
+  await page.getByRole('link', { name: "Site Settings" }).click();
+  await page.getByRole('link', { name: "Data Uploads" }).click();
+  await page.getByRole('link', { name: "Email Templates" }).click();
+  await page.getByRole('link', { name: "Email Activity" }).click();
+  await page.getByRole('link', { name: "Manage Users" }).click();
+  await page.getByRole('link', { name: "Manage Rooms" }).click();
+  await page.getByRole('link', { name: "Manage Libraries" }).click();
+});

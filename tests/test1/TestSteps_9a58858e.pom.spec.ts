@@ -1,0 +1,121 @@
+// TC: TC75256
+// Outcomes - Student creates Post Graduation Military Service
+
+import { test, expect } from '@playwright/test';
+import * as fs from 'fs';
+
+test("Outcomes - Student creates Post Graduation Military Service", async ({ page, context }) => {
+  let e2eCampusWideAdminURL = `https://e2e-tests-campuswide.admin.qa-12twenty.com/Login`;
+  let messageAnnouncement = `test`;
+  let date = `8/24/2025`;
+  let e2eCampusWideStudentURL = `https://e2e-tests-campuswide.qa-12twenty.com/Login`;
+  let employerQA = `https://employer.qa-12twenty.com/`;
+  let adminUserLoadTesting = `1`;
+  let repeatEachParameter = `1`;
+  let executionNum = `100`;
+  let e2eLawQAStudentURL = `https://e2e-tests-law.qa-12twenty.com/`;
+  const text = msg.text();
+  const timestamp = new Date().toLocaleString();
+
+  // Handle new tabs
+  context.on('page', async (newPage) => { page = newPage; });
+
+  await page.goto(e2eCampusWideStudentURL, { timeout: 90000 });
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.waitForTimeout(4000);
+  const authData = JSON.parse(fs.readFileSync('authCookie12Twenty.json', 'utf-8'));
+  await context.addCookies(authData.cookies || []);
+  await page.waitForTimeout(4000);
+  await page.reload();
+  await page.getByPlaceholder("Email Address").fill("e2e.student.fullaccess@campuswide.com");
+  await page.getByPlaceholder("Password").fill("BoH5dORH7xg%");
+  await page.getByRole('button', { name: "Student/Alumni Log In" }).click();
+  await page.waitForTimeout(1000);
+  await page.waitForLoadState('load');
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.getByRole('link', { name: "Profile" }).click();
+  await page.getByRole('link', { name: "Home" }).click();
+  await page.getByRole('link', { name: "Add Experience or Status" }).click();
+  await page.getByRole('heading', { name: "Add Experience or Status..." }).hover();
+  await page.getByRole('button', { name: "Post Graduation" }).click();
+  await page.getByRole('button', { name: "Military Service" }).click();
+  await page.getByRole('heading', { name: "Military Service" }).hover();
+  await page.locator("div.fullPageForm>span.rqdFieldNote").hover();
+  await page.locator("//LABEL[normalize-space(translate(., '\\u00A0', ' ')) = \"Branch of the armed forces\"]").hover();
+  await page.locator("SELECT[id='Fields_MilitaryBranchId'][name='Fields.MilitaryBranchId']").selectOption("4");
+  await page.locator("//LABEL[normalize-space(translate(., '\\u00A0', ' ')) = \"Role in the service\"]").hover();
+  await page.locator("SELECT[id='Fields_MilitaryServiceRoleId'][name='Fields.MilitaryServiceRoleId']").selectOption("1");
+  await page.locator("//LABEL[normalize-space(translate(., '\\u00A0', ' ')) = \"Country serving\"]").hover();
+  await page.getByPlaceholder("Country").fill("United States (USA)");
+  await page.locator("DIV[id='ui-id-5']").click();
+  await page.locator("//LABEL[contains(normalize-space(),\"Military Rank\")]").hover();
+  await page.locator("//LABEL[contains(normalize-space(),\"Seeking/Postponing Additional Details\")]").hover();
+  await page.locator("INPUT[id='Fields_MilitaryRank'][name='Fields.MilitaryRank'][type='text']").fill("Admiral");
+  await page.locator("TEXTAREA[id='Fields_PostponingJobExplanation'][name='Fields.PostponingJobExplanation']").fill("None.");
+  await page.locator("//LABEL[normalize-space(translate(., '\\u00A0', ' ')) = \"Start Date\"]").hover();
+  await page.getByPlaceholder("MM/DD/YYYY").click();
+  await page.locator("tr>td.today.day").click();
+  await page.locator("//label[normalize-space() = \"Satisfaction\"]").hover();
+  await page.locator("//label[contains(normalize-space(),\"Star Rating Attribute - Required\")]").hover();
+  await page.locator("td.ant-table-cell.drag-visible.column-center.ant-table-cell-row-hover>div.ant-row.css-eqeg24").click();
+  await page.getByRole('link', { name: "Cancel" }).hover();
+  await page.locator("INPUT[type='button'][id='btnSubmit'][name='btnSubmit']").click();
+  maxRetries = 0;
+  while(!pageUpdated && maxRetries++ < 600){ await new Promise((resolve) => setTimeout(resolve, 100)); }
+  await expect(await page.url()).toContain('e2e-tests-campuswide.admin.qa-12twenty.com/');
+  await page.waitForTimeout(4000);
+  const authData = JSON.parse(fs.readFileSync('authCookie12Twenty.json', 'utf-8'));
+  await context.addCookies(authData.cookies || []);
+  await page.waitForTimeout(4000);
+  await page.reload();
+  await page.getByPlaceholder("Email Address").fill("e2e.admin.schooladministrator@campuswide.com");
+  await page.getByPlaceholder("Password").fill("eQ%DEx%j6Cl9");
+  await page.getByRole('button', { name: "Admin Log In" }).click();
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.getByRole('link', { name: "Notifications 24" }).click();
+  await page.locator("a.notification-link>span.notification-name").click();
+  selector = MK.onSetGV(`//BUTTON[@type=\'button\'][normalize-space() = "Reset Filters"]`, null);
+  source = await page.locator(selector);
+  if (await source.count() > 0){
+  snippetLog("Performing steps. . .");
+  await page.getByRole('button', { name: "Reset Filters" }).click();
+  }
+  await page.getByRole('button', { name: "More Filters" }).click();
+  await page.getByPlaceholder("Search filters").fill("Is Appr");
+  await page.locator("//SPAN[normalize-space() = \"Is Approved\"]").click();
+  await page.locator("//LABEL[normalize-space() = \"No\"]").click();
+  await page.locator("//SPAN[contains(normalize-space(),\"Is Approved\")]").click();
+  await page.locator("li>div.studentName.span3").hover();
+  await page.locator("div.companyAndJobType>div.companyName.ellipsis.span2").hover();
+  await page.locator("tr.ng-scope.ng-isolate-scope>td.select-checkbox").click();
+  await page.locator("BUTTON[type='button']").nth(12).click();
+  await page.getByRole('link', { name: "Approve Selected (1)" }).click();
+  await page.locator("//SPAN[normalize-space() = \"Successfully approved 1 job(s).\"]").hover();
+  await page.waitForTimeout(2000);
+  await page.locator("//SPAN[contains(normalize-space(),\"Is Approved\")]").click();
+  await page.locator("//LABEL[normalize-space() = \"Yes\"]").click();
+  await page.locator("//SPAN[contains(normalize-space(),\"Is Approved\")]").click();
+  await page.locator("//a[contains(text(),\"Military Service\")]/ancestor::tr//SPAN[normalize-space() = \"Approved\"]").hover();
+  await page.locator("li>div.studentName.span3").hover();
+  await page.locator("div.companyAndJobType>div.companyName.ellipsis.span2").hover();
+  await page.getByRole('link', { name: "Students & Alumni" }).click();
+  await page.getByPlaceholder("Search by Name, Email Address or ID").fill("e2e");
+  await page.waitForTimeout(1000);
+  await page.getByRole('link', { name: "e2e Test Student" }).click();
+  await page.getByRole('link', { name: "Military Service" }).hover();
+  await expect(page.locator("div.sub-info.ng-scope>span.ng-binding")).toHaveText("Approved");
+  await page.locator("BUTTON[type='button']").nth(3).click();
+  await page.getByRole('link', { name: "Edit" }).hover();
+  await page.getByRole('link', { name: "Unapprove" }).hover();
+  await page.getByRole('link', { name: "Move Outcome" }).hover();
+  await page.getByRole('link', { name: "Add Interview Question" }).hover();
+  await page.getByRole('link', { name: "Add Outcome Note" }).hover();
+  await page.getByRole('link', { name: "Exclude from Reporting" }).hover();
+  await page.getByRole('link', { name: "View Outcome Audit Log" }).hover();
+  await page.getByRole('link', { name: "Delete" }).click();
+  await page.getByRole('heading', { name: "Delete Entry" }).hover();
+  await page.locator("div.modal-body.ng-pristine.ng-valid.ng-scope>div.text-area-display.ng-binding.ng-scope").hover();
+  await page.getByRole('button', { name: "Delete Entry" }).click();
+  await page.waitForTimeout(10000);
+  await page.waitForLoadState('load');
+});

@@ -1,0 +1,124 @@
+// TC: TC63119
+// Employers - Create a new Employer - Admin
+
+import { test, expect } from '@playwright/test';
+import * as fs from 'fs';
+
+test("Employers - Create a new Employer - Admin", async ({ page, context }) => {
+  let e2eCampusWideAdminURL = `https://e2e-tests-campuswide.admin.qa-12twenty.com/Login`;
+  let messageAnnouncement = `test`;
+  let date = `8/24/2025`;
+  let e2eCampusWideStudentURL = `https://e2e-tests-campuswide.qa-12twenty.com/Login`;
+  let employerQA = `https://employer.qa-12twenty.com/`;
+  let adminUserLoadTesting = `1`;
+  let repeatEachParameter = `1`;
+  let executionNum = `100`;
+  let e2eLawQAStudentURL = `https://e2e-tests-law.qa-12twenty.com/`;
+  const text = msg.text();
+  const timestamp = new Date().toLocaleString();
+
+  // Handle new tabs
+  context.on('page', async (newPage) => { page = newPage; });
+
+  await page.goto(e2eCampusWideAdminURL, { timeout: 90000 });
+  await page.waitForTimeout(4000);
+  const authData = JSON.parse(fs.readFileSync('authCookie12Twenty.json', 'utf-8'));
+  await context.addCookies(authData.cookies || []);
+  await page.waitForTimeout(4000);
+  await page.reload();
+  await page.getByPlaceholder("Email Address").fill("e2e.admin.schooladministrator@campuswide.com");
+  await page.getByPlaceholder("Password").fill("eQ%DEx%j6Cl9");
+  await page.getByRole('button', { name: "Admin Log In" }).click();
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.getByRole('link', { name: "Employers" }).click();
+  await page.waitForLoadState('load');
+  await page.reload();
+  await page.getByRole('link', { name: "Add Employer" }).click();
+  await page.waitForLoadState('load');
+  await page.getByRole('heading', { name: "Add New Employer" }).hover();
+  await page.locator("div.form-group>label.control-label").nth(1).hover();
+  await page.locator("//LABEL[normalize-space(translate(., '\\u00A0', ' ')) = \"Student Employment Employer\"]").hover();
+  await page.locator("//LABEL[normalize-space() = \"Industry *\"]").hover();
+  await page.locator("INPUT[name='EmployerName']").fill("Amazon Test Alias");
+  await page.getByRole('button', { name: "None-selected" }).click();
+  await page.getByPlaceholder("Search").fill("Consulting - Other");
+  await page.locator('input[type="checkbox"]').click();
+  await page.locator("//LABEL[normalize-space() = \"Yes\"]").click();
+  await page.locator('input[type="radio"]').check();
+  await page.locator("//LABEL[normalize-space() = \"# of Employees*\"]").hover();
+  await page.locator("SELECT[id='NumberOfEmployeesId'][name='NumberOfEmployeesId']").selectOption("number:3");
+  await page.locator("//LABEL[normalize-space() = \"Account Manager*\"]").hover();
+  await page.locator("SELECT[id='AccountManagerId'][name='AccountManagerId']").selectOption("number:540016055100183");
+  await page.locator("//LABEL[normalize-space() = \"Website\"]").hover();
+  await page.getByPlaceholder("Website").fill("https://www.muuktest.com");
+  await page.locator("//LABEL[normalize-space() = \"Outreach Priority*\"]").hover();
+  await page.locator("SELECT[id='OutreachPriorityId'][name='OutreachPriorityId']").selectOption("number:1");
+  await page.locator("//LABEL[normalize-space() = \"Hero Image PNG or JPG file type.800x500 minimum size recommended\"]").hover();
+  await page.locator("div.form-group>label.control-label").nth(9).hover();
+  await page.locator("//LABEL[normalize-space(translate(., '\\u00A0', ' ')) = \"Priority Resources & Efforts\"]").hover();
+  await page.locator("//LABEL[normalize-space() = \"Demographic Data Available?\"]").hover();
+  await page.locator("div.form-group>label.control-label").nth(13).hover();
+  await page.locator("//LABEL[normalize-space() = \"Linkedin Profile\"]").hover();
+  await page.locator("//LABEL[normalize-space() = \"Twitter Profile\"]").hover();
+  await page.locator("//LABEL[normalize-space() = \"Facebook Profile\"]").hover();
+  await page.locator("//LABEL[normalize-space() = \"Instagram Profile\"]").hover();
+  await page.getByRole('button', { name: "Cancel" }).hover();
+  await page.getByRole('button', { name: "Save" }).click();
+  await page.waitForLoadState('load');
+  await page.getByRole('heading', { name: "Employer Directory" }).hover();
+  await page.getByPlaceholder("Company Name").fill("Amazon Test Alias");
+  await page.locator("BUTTON[type='button']").nth(2).click();
+  await page.waitForLoadState('load');
+  await page.locator("div.results-header-right>div.num-results.ng-binding.ng-scope").hover();
+  await page.getByRole('link', { name: "Amazon Test Alias" }).hover();
+  await page.locator("//SPAN[normalize-space() = \"Consulting - Other\"]").hover();
+  await page.locator("//SPAN[normalize-space() = \"11-50\"]").hover();
+  await page.getByRole('link', { name: "Amazon Test Alias" }).click();
+  await page.getByRole('heading', { name: "Amazon Test Alias" }).hover();
+  await page.getByRole('link', { name: "https://www.muuktest.com" }).hover();
+  await page.locator("//SPAN[@title='Number of employees'][normalize-space() = \"11-50\"]").hover();
+  await page.locator("//SPAN[@title='Industries'][normalize-space() = \"Consulting - Other\"]").hover();
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.getByRole('link', { name: "Activities" }).click();
+  await page.getByRole('link', { name: "Contacts" }).click();
+  await page.locator("ul.nav>li.uib-tab.nav-item").nth(3).click();
+  await page.getByRole('link', { name: "Hires" }).click();
+  await page.getByRole('link', { name: "Locations" }).click();
+  await page.getByRole('link', { name: "Events" }).click();
+  await page.getByRole('link', { name: "OCI and Job Listings" }).click();
+  await page.getByRole('link', { name: "Experiences" }).click();
+  await page.waitForLoadState('load');
+  await page.locator("a.nav-link.ng-binding>uib-tab-heading.ng-scope").click();
+  await page.locator("//DIV[normalize-space() = \"12twenty Job IQ\"]").hover();
+  await page.locator("BUTTON[type='button']").nth(2).click();
+  await page.getByRole('link', { name: "Add Note" }).hover();
+  await page.getByRole('link', { name: "Create Task" }).hover();
+  await page.getByRole('link', { name: "Edit" }).hover();
+  await page.getByRole('link', { name: "Merge" }).hover();
+  await page.getByRole('link', { name: "Reject" }).hover();
+  await page.getByRole('link', { name: "View Audit Log" }).hover();
+  await page.getByRole('link', { name: "Reject" }).click();
+  await page.waitForLoadState('load');
+  await page.getByRole('heading', { name: "Reject Employer" }).hover();
+  await page.locator("div.modal-body.ng-pristine.ng-valid.ng-scope>div.text-area-display.ng-binding.ng-scope").hover();
+  await page.getByRole('button', { name: "Cancel" }).hover();
+  await page.getByRole('button', { name: "Reject" }).click();
+  await page.locator("div.sub-header.badges>span.badge").hover();
+  await page.locator("BUTTON[type='button']").nth(2).click();
+  await page.getByRole('link', { name: "Approve" }).hover();
+  await page.getByRole('link', { name: "Employers" }).click();
+  await page.waitForLoadState('load');
+  await page.reload();
+  await page.getByRole('button', { name: "Reset" }).click();
+  await page.getByPlaceholder("Company Name").fill("Amazon Test Alias");
+  await page.locator("BUTTON[type='button']").nth(2).click();
+  await page.waitForLoadState('load');
+  await page.locator("div.search-results>div.no-results").hover();
+  selector = MK.onSetGV(`//A[contains(text(),"Amazon Test Alias")]`, null);
+  var isElementPresent = await page.locator(selector).count() > 0;
+  if (!isElementPresent) {
+  snippetLog('Element is not present.');
+  } else {
+  throw new Error('Element is present');
+  }
+});

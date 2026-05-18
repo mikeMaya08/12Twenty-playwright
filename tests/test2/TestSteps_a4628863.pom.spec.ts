@@ -1,0 +1,118 @@
+// TC: TC_A78611
+// Site Settings - Add&#x2F;Update Site Instance Contact, module naming
+
+import { test, expect } from '@playwright/test';
+import * as fs from 'fs';
+
+test("Site Settings - Add&#x2F;Update Site Instance Contact, module naming", async ({ page, context }) => {
+  let e2eCampusWideAdminURL = `https://e2e-tests-campuswide.admin.qa-12twenty.com/Login`;
+  let messageAnnouncement = `test`;
+  let date = `8/24/2025`;
+  let e2eCampusWideStudentURL = `https://e2e-tests-campuswide.qa-12twenty.com/Login`;
+  let employerQA = `https://employer.qa-12twenty.com/`;
+  let adminUserLoadTesting = `1`;
+  let repeatEachParameter = `1`;
+  let executionNum = `100`;
+  let e2eLawQAStudentURL = `https://e2e-tests-law.qa-12twenty.com/`;
+
+  // Handle new tabs
+  context.on('page', async (newPage) => { page = newPage; });
+
+  await page.goto(e2eCampusWideAdminURL, { timeout: 90000 });
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.waitForTimeout(4000);
+  const authData = JSON.parse(fs.readFileSync('authCookie12Twenty.json', 'utf-8'));
+  await context.addCookies(authData.cookies || []);
+  await page.waitForTimeout(4000);
+  await page.reload();
+  await page.getByPlaceholder("Email Address").fill("e2e.admin.schooladministrator@campuswide.com");
+  await page.getByPlaceholder("Password").fill("eQ%DEx%j6Cl9");
+  await page.getByRole('button', { name: "Admin Log In" }).click();
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.locator("//a[normalize-space()=\"Site Management\"]/following-sibling::button").click();
+  await page.getByRole('link', { name: "Site Settings" }).click();
+  await page.getByRole('link', { name: "Edit" }).click();
+  await page.getByRole('heading', { name: "Edit Contact Information" }).hover();
+  await page.locator("//LABEL[normalize-space() = \"Contact Us Email Recipient:\"]").hover();
+  await page.locator("SELECT[id='contactUsEmailAddress'][name='contactUsEmailAddress']").click();
+  await page.waitForTimeout(1000);
+  await page.keyboard.press("e2e Test Admin");
+  await page.keyboard.press("ArrowDown");
+  await page.locator("//LABEL[normalize-space() = \"Contact Us Phone Number:\"]").hover();
+  await page.locator("INPUT[type='text'][id='contactUsPhoneNumber']").fill("4587963122");
+  await page.locator("//LABEL[normalize-space() = \"Career Center Name:\"]").hover();
+  await page.locator("TEXTAREA[placeholder=''][id='APjFqb'][name='q'][role='combobox']").fill("Muuktest Career Center");
+  await page.locator("//LABEL[normalize-space() = \"External URL Display Name:\"]").hover();
+  await page.locator("div.jlkklc>div.z7BZJb.XSNERd").fill("Muuktest URL");
+  await page.locator("//LABEL[normalize-space() = \"External URL:\"]").hover();
+  await page.getByRole('button', { name: "Executions" }).fill("https://www.linkedin.com/company/12twenty-inc?trk=public_profile_experience-item_profile-section-card_image-click");
+  await page.getByRole('link', { name: "Cancel" }).hover();
+  await page.getByRole('link', { name: "Save" }).click();
+  await page.getByRole('link', { name: "OK" }).click();
+  await page.locator("dl.dl-horizontal>dd").nth(1).hover();
+  await page.locator("dl.dl-horizontal>dd").nth(2).hover();
+  await page.locator("dl.dl-horizontal>dd").nth(3).hover();
+  await page.locator("//SPAN[normalize-space() = \"https://www.linkedin.com/company/12twenty-inc?trk=public_profile_experience-item_profile-section-card_image-click\"]").hover();
+  await page.getByRole('link', { name: "Job Listings & Interviews" }).click();
+  await page.locator("//LABEL[normalize-space() = \"Custom Student Employment Module Name\"]").hover();
+  await page.locator("INPUT[name='config-key-2507'][id='config-key-2507'][type='text']").fill("Interviews2");
+  await page.locator("INPUT[name='config-key-2508'][id='config-key-2508'][type='text']").fill("Student Employment2");
+  await page.getByRole('button', { name: "Save Changes" }).click();
+  await page.getByRole('heading', { name: "Success!" }).hover();
+  await page.locator("//DIV[normalize-space() = \"The configuration values have been successfully saved.\"]").nth(1).hover();
+  await page.getByRole('button', { name: "OK" }).click();
+  await page.waitForLoadState('load');
+  await page.reload();
+  await page.getByRole('link', { name: "Student Employment2" }).hover();
+  maxRetries = 0;
+  while(!pageUpdated && maxRetries++ < 600){ await new Promise((resolve) => setTimeout(resolve, 100)); }
+  await expect(await page.url()).toContain('e2e-tests-campuswide.qa-12twenty.com/');
+  await page.waitForTimeout(4000);
+  const authData = JSON.parse(fs.readFileSync('authCookie12Twenty.json', 'utf-8'));
+  await context.addCookies(authData.cookies || []);
+  await page.waitForTimeout(4000);
+  await page.reload();
+  await page.getByPlaceholder("Email Address").fill("e2e.student.fullaccess@campuswide.com");
+  await page.getByPlaceholder("Password").fill("BoH5dORH7xg%");
+  await page.getByRole('button', { name: "Student/Alumni Log In" }).click();
+  await page.waitForTimeout(1000);
+  await page.waitForLoadState('load');
+  await page.getByRole('link', { name: "Home" }).hover();
+  await page.getByRole('link', { name: "Student Employment2" }).hover();
+  await page.getByRole('link', { name: "Help & Support" }).click();
+  await page.getByRole('heading', { name: "Help & Support" }).hover();
+  await page.getByRole('heading', { name: "E2E Tests Campuswide" }).hover();
+  await page.getByRole('link', { name: "4587963122" }).hover();
+  await page.getByRole('link', { name: "e2e.admin.schooladministrator@campuswide.com" }).hover();
+  await page.getByRole('link', { name: "Muuktest URL" }).hover();
+  await page.getByRole('link', { name: "Muuktest URL" }).click();
+  maxRetries = 0;
+  while(!pageUpdated && maxRetries++ < 600){ await new Promise((resolve) => setTimeout(resolve, 100)); }
+  await expect(await page.url()).toContain('linkedin.com/company/12twenty-inc');
+  await page.getByRole('heading', { name: "Sign in to see who you already know at 12twenty" }).hover();
+  await page.getByRole('link', { name: "General" }).click();
+  await page.waitForTimeout(3000);
+  await page.getByRole('link', { name: "Edit" }).click();
+  await page.locator("INPUT[type='text'][id='contactUsPhoneNumber']").fill("60000");
+  await page.locator("TEXTAREA[placeholder=''][id='APjFqb'][name='q'][role='combobox']").fill("");
+  await page.locator("div.jlkklc>div.z7BZJb.XSNERd").fill("");
+  await page.getByRole('button', { name: "Executions" }).fill("");
+  await page.getByRole('link', { name: "Cancel" }).hover();
+  await page.getByRole('link', { name: "Save" }).click();
+  await page.getByRole('heading', { name: "Success" }).hover();
+  await page.locator("//DIV[normalize-space() = \"Your changes have been saved successfully.\"]").hover();
+  await page.getByRole('link', { name: "OK" }).click();
+  await page.reload();
+  await page.reload();
+  await page.getByRole('link', { name: "Job Listings & Interviews" }).click();
+  await page.locator("INPUT[name='config-key-2507'][id='config-key-2507'][type='text']").fill("Interviews");
+  await page.locator("INPUT[name='config-key-2508'][id='config-key-2508'][type='text']").click();
+  await page.locator("INPUT[name='config-key-2508'][id='config-key-2508'][type='text']").fill("");
+  await page.getByRole('button', { name: "Save Changes" }).click();
+  await page.getByRole('heading', { name: "Success!" }).hover();
+  await page.locator("//DIV[normalize-space() = \"The configuration values have been successfully saved.\"]").nth(1).hover();
+  await page.getByRole('button', { name: "OK" }).click();
+  await page.waitForLoadState('load');
+  await page.reload();
+  await page.getByRole('link', { name: "Student Employment" }).hover();
+});

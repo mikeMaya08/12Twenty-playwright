@@ -4,6 +4,7 @@ config();
 
 export default defineConfig({
   testDir: './tests',
+  timeout: 120000,
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -16,6 +17,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'on',
     trace: 'retain-on-failure',
+    actionTimeout: 60000,
+    navigationTimeout: 90000,
   },
   outputDir: 'test-results/',
   projects: [
