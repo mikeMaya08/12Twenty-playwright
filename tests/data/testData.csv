@@ -1,0 +1,243 @@
+test,name,classname,type
+TC58233,Students & Alumni - Add new flag to a student - Admin,None,test
+TC58244,Employers - Verify that a user can successfully add a new employer -Admin,None,test
+TC58293,Employers - Verify that the user can save a search - Admin,None,test
+TC58294,Employers - Admin Searches Employer Directory by Company Name,None,test
+TC58295,Employers - Add a Note to an Existing Company - Admin,None,test
+TC58320,Contacts - Admin can add/delete a Contact,None,test
+TC58324,Home - Post a non-expired announcement for Students & Alumni - Admin,None,test
+TC58472,Employers - Open Employer profile and create a new contact from the profile page,None,test
+TC58510,Tasks - Add a New Task as Open - Admin,None,test
+TC58514,Tasks - Filter tasks by Task Status as Open - Admin,None,test
+TC58566,Tasks - Delete an Added and Completed Task - Admin,None,test
+TC58567,Activity Stream - Add New Campaign - Admin,None,test
+TC58569,Students & Alumni - Search an Active student - Admin,None,test
+TC58570,Contacts - Find an Approved Contact by Name - Admin,None,test
+TC58656,Analytics - Mentorships - Filter by relative Range - Admin,None,test
+TC58658,Reports - Open Site Usage Summary Report - Admin,None,test
+TC58659,Standard Reports - Generate and Export NACE Complete Report,None,test
+TC58662,Appointments - Add a Block - Admin,None,test
+TC58675,Appointments - Book Appointment - Admin,None,test
+TC58734,"Events - Job Fairs - Admin creates/edits, adds a student, registers an employer, deletes event",None,test
+TC58796,"Events - Admin creates an event, students can register, admin deletes registrations and the event",None,test
+TC58916,Students & Alumni Directory- Profile - Update and Clear Alternate Email Address - Student,None,test
+TC58961,Manage Users - Impersonation - Announcements and homepage tiles are visible to students-Admin,None,test
+TC58963,Employers - UI elements are visible - Admin,None,test
+TC58964,Employers - Directory Page UI elements are visible - Admin,None,test
+TC58965,Contacts - UI elements are visible - Admin,None,test
+TC58987,"Contacts - List page is displayed, search for contact and open profile",None,test
+TC59044,Students & Alumni - Change to List view and Card view - Admin,None,test
+TC59045,Students & Alumni - Search bar in card view - Admin,None,test
+TC59052,Users - Search Student - Student,None,test
+TC59055,Application Materials - Add new Resumes - Student,None,test
+TC59059,Application Materials - Add new Cover Letters - Student,None,test
+TC59061,Application Materials - Add new Transcripts - Student,None,test
+TC59304,Command Center - Interview session Student and Employer - Admin,None,test
+TC60125,Outcomes - Add Report Status as Accepted Job - Student,None,test
+TC60136,Outcomes - Add Report Experience as Received Internship - Student,None,test
+TC60171,Application Materials - Add new Recommendation Letters - Student,None,test
+TC60172,Application Materials - Add new Writing Samples - Student,None,test
+TC60317,Application Materials - Add new Others - Student,None,test
+TC60476,Application Materials - Add new URLs - Student,None,test
+TC60477,Saved Search Notifications - Employers - Students can add/delete employer saved search,None,test
+TC60681,Interview Questions - Add Interview to Post Graduation - Student,None,test
+TC60691,Interview Questions - Add interview to Internship - Student,None,test
+TC60700,Experiential Learning - Adding a new experience - Admin,None,test
+TC60746,Tasks - New Task - Student,None,test
+TC60749,Student Employment - Post a Student Employment Job - Admin,None,test
+TC61325,Resume Books - Add New Resume Book - Admin,None,test
+TC61343,Employers - Student adds name filter and verifies correct company is displayed,None,test
+TC61345,Employers - Student can search for an employer by name without filter ,None,test
+TC61347,Contacts - Students can search for a contact and open profile,None,test
+TC61658,OCI - Admin registers for an Interview then deletes the record,None,test
+TC61664,Job Postings - Admin posts and deletes a job ,None,test
+TC61991,"IN PROGRESS--Events - Host a Job Fair, Approving Employer Registration, and Processing Payment - Admin",None,test
+TC61996,Experiential Learning - Add a new experience - Student,None,test
+TC62240,12TE Candidate Search - Analytics - Verify data is displayed,None,test
+TC62561,OCI - Student views/applies/withdraws,None,test
+TC62630,"Students - Edit students profile as an Admin, verify the changes are made",None,test
+TC62634,"Users - Impersonate Student, Employer and Admin users",None,test
+TC62636,Students - Student connects/emails student,None,test
+TC62792,12TE - Post a Job - Employer,None,test
+TC62800,Events - Employers can Search for upcoming and past events by name,None,test
+TC63105,Admin - Bulk Update Students,None,test
+TC63116,Employers - Admins add/reset filters and results are displayed,None,test
+TC63119,Employers - Create a new Employer - Admin,None,test
+TC63396,SSO - Login - Student - CAS,None,test
+TC63483,Students - Engagement Directory - Verify students are displayed and education short summary is shown,None,test
+TC63487,Research Tools - Add Filters - Student,None,test
+TC63506,12TE - Job Posting Analytics - Verify page loads and data is displayed,None,test
+TC63507,BLOCKED---Candidate_Unlock_Candidate_Analytics UI elements-Employer,None,test
+TC63509,Contacts - Activity Stream - Add/Delete Note/Meeting,None,test
+TC63691,Students & Alumni - Admin Email Student from Profile,None,test
+TC63720,Students - Profile - Verify profile sections are displayed as expected,None,test
+TC63793,Contacts - Add Filter - Student,None,test
+TC63794,Students - Admin filters for student and test page views,None,test
+TC63795,"12TE - Events - Create, searching and cancel - Employer",None,test
+TC64022,Attributes - Site Settings - Add New Attribute to Student Profile - Admin,None,test
+TC64300,12TE Interviews - Schedule an interview for a job and then cancel it - Employer,None,test
+TC64499,"Job Listings & Interviews - Admin posts a Job, student applies, admin deletes application and job",None,test
+TC64776,OCI - Export Applicant Summary - Admin,None,test
+TC64830,12TE - Employer Profile - Employer user updates company profile,None,test
+TC64832,12TE - My Company - Edit a user profile - Employer,None,test
+TC64833,12TE - School Directory - Add and remove from favorites - Employer,None,test
+TC65130,"Target Employers - Create a contact, add a note, create a task and delete it - Student",None,test
+TC65147,Target Employers - Add note to a employee and delete it -Student,None,test
+TC65165,"12TE Interviews - Create a meeting, post a job, add a schedule and add a interviewer - Employer",None,test
+TC65367,Email Template-Create an email template and delete it-Employer(non admin),None,test
+TC65399,Student - Audit log updates - Admin,None,test
+TC65438,"Resource Library - Add and view all resource types, add and browse folders - Admin",None,test
+TC65807,On Login - Attributes on login for interval 'once' and specific student group - Admin,None,test
+TC65814,"Manage Users - Admin adds, updates, and deletes student",None,test
+TC66112,12TE Events - Employer user adds a multi-school event to multiple schools,None,test
+TC66666,Students - Create a new student and sign up as the user,None,test
+TC66686,12TE Job Postings - Employer user creates job posting for multiple schools and pays,None,test
+TC67031,"Events - Job Fairs - Admin create and edit job fair, launch kiosk and checks student in, deletes event ",None,test
+TC67060,"12TE Candidate Search - Employer user filters for candidate, favorites, unlocks, and sends email to candidates",None,test
+TC67381,"Events - Admin creates and edits an event, launches kiosk and checks a student in, deletes event",None,test
+TC67639,Custom Report - Create a custom outcome report with filters and columns and delete it,None,test
+TC67702,12TE Candidate Search - Search and filter for candidates,None,test
+TC67722,12TE Interviews - Employer user adds a multi-school interview to multiple schools,None,test
+TC68634,Job Listings - Admin - Update existing non-OCI test to download packet of student applicants,None,test
+TC69198,Analytics - Recruiting Intelligence - Verify Population Analysis Report is Loaded -  Employer,None,test
+TC69203,"Mentorships - Set mentor, browse mentors, request mentor, complete tasks",None,test
+TC71681,login-e2e-load testing,None,test
+TC71818,Appointments - Student can create a new appointment and its displayed in student calendar - Admin,None,test
+TC72046,LoadTesting - Student,None,test
+TC72143,LoadTesting - Admin,None,test
+TC75003,Outcomes - Student creates Post Graduation Received Job,None,test
+TC75214,Outcomes - Student creates Post Graduation Own Venture,None,test
+TC75256,Outcomes - Student creates Post Graduation Military Service,None,test
+TC58233_B58235,campusWideAdminLogin,None,block
+TC58916_B59051,e2eStudentLogin,None,block
+TC59052_B59058,campusWideStudentLogin,None,block
+TC60125_B60688,searchE2ETestStudent,None,block
+TC60681_B60693,goToInterviewQuestions,None,block
+TC58796_B61311,createAnEvent,None,block
+TC61844_B62241,employerLogin,None,block
+TC59304_B62958,studentRequestsAccessToMeeting,None,block
+TC58796_B67389,eventDates,None,block
+TC67890_B67891,delete,None,block
+TC67722_B69979,employerNoSubscriptionLogin,None,block
+TC69203_B71360,createNewTask,None,block
+TC69203_B71366,deleteTask,None,block
+TC71818_B71825,backspaceBlock,None,block
+TC71734_B71987,login-BIZ-Admin,None,block
+TC71734_B72229,login-BIZ-Admin1,None,block
+TC72046_B72518,sleepLoadTesting,None,block
+TC_A77432_B77608,12backspace,None,block
+TC63509_B78140,DeleteActivity-TC63509,None,block
+TC63509_B78142,DeleteNote-TC63509,None,block
+TC_A78122_B78152,LawQA-AdminLogin,None,block
+TC58510_B78193,DeleteTask-TC58510,None,block
+TC60746_B78194,DeleteTask-TC60746,None,block
+TC64499_B78195,DeleteJobPosting-TC64499,None,block
+TC66666_B78196,DeleteUser-TC66666,None,block
+TC_A77031_B78227,DeleteUser-TC_A77031,None,block
+TC_A78709_B78710,EventDates,None,block
+TC_A79039_B79115,logOut,None,block
+TC61325_B79279,DeleteResumeBook-TC61325,None,block
+TC69203_B79579,loginAsMentor,None,block
+TC69203_B79580,loginAs-e2eTestStudent,None,block
+TC_A81139_B81181,DateAndTime-PreEventSurvey,None,block
+TC65130_B81402,deleteTargetContact,None,block
+TC_A79039_B81819,changeAllowEmployersToContactMeToNo,None,block
+TC_A79039_B81820,deleteE2ETestResume-ApplicationMaterials,None,block
+TC_A79039_B81821,deleteQAResume-ApplicationMaterials,None,block
+TC_A79039_B81823,editAccessPermissions-Employer,None,block
+TC_A82518_B82589,deleteTextWithKeyboard,None,block
+TC_A82518_B82616,openFormToEditMentorshipProgram,None,block
+TC_A82640_B82827,fillCreateSettingForm,None,block
+TC65814_B82843,addNewStudent,None,block
+TC_A83003_B83006,deleteMentorship,None,block
+TC_A83061_B83066,selectFullAccessMentor,None,block
+TC_A83061_B83067,selectMentorshipProgram1,None,block
+TC_A83061_B83069,loginAs-onProfile,None,block
+TC_A83061_B83121,ManageMentorship-deleteMentorshipProgram1,None,block
+TC_A83003_B83125,selectE2ETestCampuswideMentorshipProgram,None,block
+TC_A83124_B83126,fillFieldsMentorshipProgramStaceyAndJared,None,block
+TC_A80121_B83208,deleteAppointmentBlock-80121,None,block
+TC_A80121_B83210,deleteAppointmentConfiguration,None,block
+TC_A79933_B83293,deleteAdminTestGroup,None,block
+TC_A83263_B83375,deleteCustomBranding,None,block
+TC58567_B83389,deleteMuuktestCampaign,None,block
+TC_A81139_B83405,Eligibility - Primary Event Contact - Admin,None,block
+TC_A83425_B83526,createStudent,None,block
+TC_A82640_B83550,outcomeCleanup,None,block
+TC_A83695_B83696,newDataUpload-Mentorships,None,block
+TC_A83699_B83703,deleteResume-ApplicationMaterials,None,block
+TC_A83695_B83722,deleteMentorship-DataUpload,None,block
+TC_A83741_B83886,appointmentValidations,None,block
+TC_A83741_B83887,deleteAppointment-TC_A83741,None,block
+TC_A83741_B83888,deleteAppointmentBlock-TC_A83741,None,block
+TC_A83906_B83921,deleteOutcome-TC_A83906,None,block
+TC_A83747_B84012,deleteExperienceType,None,block
+TC_A83906_B84041,compensationForm,None,block
+TC_A83906_B84042,completeOtherQuestions,None,block
+TC75195_B84066,starRatingAttribute,None,block
+TC58325,Home - Post a non-expired announcement for Admins - Admin,None,test
+TC58418,Home - Post a non-expired announcement for Employers - Admin,None,test
+TC58479,Employers - Delete a contact from an employer - Admin,None,test
+TC61312,"Events - Create, Cancel, Duplicate, and Delete an Event - Admin",None,test
+TC61322,Appointments - Edit an Existing Appointment - Admin,None,test
+TC62256,12TE Events - Create and cancel an event,None,test
+TC62910,Job Postings - Post a Student Employment Job ,None,test
+TC64779,OCI - Register for Interview and Job and apply as Student - Admin,None,test
+TC71734,prototype login-e2e-load,None,test
+TC72221,LoadTesting - Interviewer,None,test
+TC72630,MONDAY-Student,None,test
+TC72642,MONDAY-Admin,None,test
+TC72648,MONDAY-Interviewer,None,test
+TC75195,Outcomes - Student creates Post Graduation Declined Job,None,test
+TC76012,Business site - Slots creation,None,test
+TC83327,Events – Waitlisted Student Auto-Promotion on Cancellation,None,test
+TC_A76131,SSO - Login - Student - Shibboleth,None,test
+TC_A77031,Data Uploads - Download template and create/delete new student user,None,test
+TC_A77432,"Communities - Admin can create, update community, student can view and comment",None,test
+TC_A77681,"Schedules - Templates - Add, edit, delete a schedule template ",None,test
+TC_A77717,"Calendar - Students - Access different calendar views, update interview availability ",None,test
+TC_A77814,12twenty Passport - Passport can be enabled/disabled and student can trigger email,None,test
+TC_A77940,Calendar Sync - Add/Revoke Google and Microsoft Accounts - Part 1,None,test
+TC_A78092,12TE Interviews - Interview Plans - Create/edit/duplicate/delete - Verify changes are saved,None,test
+TC_A78122,Employers - Judge Directory - Students add Judge via outcome and admin approves,None,test
+TC_A78156,Employers - Judge Directory - Add/edit/reject Judge,None,test
+TC_A78611,"Site Settings - Add/Update Site Instance Contact, module naming",None,test
+TC_A78709,Events - Verify name tags can be printed and edited,None,test
+TC_A79039,"12TU Candidate Search - Employers can view applicants, download resumes, filter",None,test
+TC_A79158,Analytics - Job Postings - Verify page load and filters,None,test
+TC_A79344,Calendar Sync - Add/Revoke Google and Microsoft Accounts - Part 2,None,test
+TC_A79933,Users - Admin Groups - Create group and validate record visibility,None,test
+TC_A79991,Students - Student Groups - Create and Merge Student Groups,None,test
+TC_A80121,Appointments - Settings - Add and delete a new appointment configuration,None,test
+TC_A80380,"12TE Events - Career Fairs - List page, filters, links open",None,test
+TC_A81139,12TU Pre-Event Survey,None,test
+TC_A81288,"Students - Create, Save, Delete a custom list view",None,test
+TC_A81561,Attributes - Enable/Disable eligibility for Employers,None,test
+TC_A81778,API Documentation - Confirm API endpoints page opens and data is displayed,None,test
+TC_A81896,PAUSED - LinkedIn - Import LinkedIn Profile on login and student profile,None,test
+TC_A82097,Side Nav - Verify modules are highlighted and expanded correctly ,None,test
+TC_A82325,"Lookups/Picklists - Filters, Merging, reordering work as expected",None,test
+TC_A82518,"Notifications - Verify Email notifications can be edited, disabled, links work",None,test
+TC_A82640,Outcomes - Settings - Admin can enable v2 and students can submit outcomes,None,test
+TC_A83003,Mentorships - Admin creates and deletes mentorship,None,test
+TC_A83008,Mentorships - Admin Updates Module Name,None,test
+TC_A83041,Linkedin Test,None,test
+TC_A83053,Mentorships - Admin Can Assign and Update Mentorship Programs ,None,test
+TC_A83061,"Mentorship Requests - Accept, Decline, and Request Limit Enforcement",None,test
+TC_A83124,"Mentorship Admin Validation - Duplicate Prevention, Limits, and Recreate After Deletion",None,test
+TC_A83213,"Application Documents - Document Approval Lifecycle - Manual Approval, Auto Approval, and Deletion",None,test
+TC_A83263,"Site Settings - Custom Branding Lifecycle - Create, Verify as Student, and Remove",None,test
+TC_A83403,Events - Pre-registration survey response included in export,None,test
+TC_A83425,Students - Profile and Hero Images Visible to Other Students,None,test
+TC_A83525,Students - Profile Completion Banner Appears/Disappears Based on Completion Status,None,test
+TC_A83602,"Employer Tags - Admin can add values and students can assign, delete, filter for values",None,test
+TC_A83655,Mentorships - Admin Assigned Matching Only,None,test
+TC_A83695,"Mentorships - Data Upload Success, Upload Error Handling, and Deletion Flow",None,test
+TC_A83699,12TU Candidate Search -  Visibility and Opt-Out Validation,None,test
+TC_A83741,Appointments - Hybrid: Preferred Location Required When Switching Appointment Type,None,test
+TC_A83747,Experiential Learning - Experience Type Picklist Bulk Upload Success,None,test
+TC_A83906,Outcomes List Page - Post-Approval UX: Auto-Close Modal and Refresh List,None,test
+TC_A83922,Interview Experience - Clicking Student Name Opens Resume Slideout for Employers,None,test
+TC_A84040,Outcomes – Validate Industry is required on Accepted Job submission,None,test
+TC_A84046,Students – Job Preferences can be added and removed successfully,None,test
+TC_A84144,Students - Send Passport and Verify Images Display in Email,None,test

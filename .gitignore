@@ -1,0 +1,17 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+downloads/
+auth.json
+authCookie12Twenty.json
+
+# Generated JSON reports from MuukReport
+test/*.json
+
+# Generated logs from test runs
+browser-*.log
+test/snippetLog-*.log
+
+# macOS
+.DS_Store
