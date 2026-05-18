@@ -13,5 +13,8 @@ test/*.json
 browser-*.log
 test/snippetLog-*.log
 
+# Environment variables (API keys)
+.env
+
 # macOS
 .DS_Store
