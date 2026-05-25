@@ -9,9 +9,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   workers: 1,
-  reporter: [['html', { outputFolder: 'playwright-report' }], ['list'],
-    ['@muuktest/amikoo-reporter']
-  ],
+  reporter: [['html', { outputFolder: 'playwright-report' }], ['list'], ['@muuktest/amikoo-reporter']],
   use: {
     headless: true,
     screenshot: 'only-on-failure',
@@ -19,17 +17,12 @@ export default defineConfig({
     trace: 'retain-on-failure',
     actionTimeout: 60000,
     navigationTimeout: 90000,
+    viewport: { width: 1920, height: 1080 },
   },
   outputDir: 'test-results/',
   projects: [
     {
-      name: 'test1',
-      testDir: './tests/test1',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'test2',
-      testDir: './tests/test2',
+      name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
   ],
