@@ -2,27 +2,15 @@
 // Analytics - Job Postings - Verify page load and filters
 
 import { test, expect } from '@playwright/test';
-import { loadAuthCookies, loginAsAdmin } from '@fixtures/test';
+import { loginAsAdmin } from '@fixtures/test';
 import { URLS } from '@config/environments';
 import { NAV_HOME, SPAN_CLOSE_X } from '@config/selectors';
 
-test("Analytics - Job Postings - Verify page load and filters - TC_A79158", async ({ page, context }) => {
-  await test.step(`Setup`, async () => {
-    await page.goto(URLS.campusWideAdmin, {timeout: 90000});
-    await page.waitForTimeout(4000);
-  });
-
-  await test.step(`Load auth session`, async () => {
-    await loadAuthCookies(context, page);
-    await page.waitForTimeout(4000);
-    await page.reload();
-  });
-
-  await test.step(`Fill email`, async () => {
+test("Analytics - Job Postings - Verify page load and filters - TC_A79158", async ({ page }) => {
+  await test.step(`Setup & Login`, async () => {
+    await page.goto(URLS.campusWideAdmin, { timeout: 90000 });
     await loginAsAdmin(page);
   });
-
-
 
   await test.step(`Hover "Home"`, async () => {
     await page.locator(NAV_HOME).nth(0).hover();
