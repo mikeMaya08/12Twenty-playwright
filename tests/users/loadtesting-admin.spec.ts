@@ -2,32 +2,14 @@
 // LoadTesting - Admin
 
 import { test, expect } from '@playwright/test';
-import { loadAuthCookies } from '@fixtures/test';
-import { ADMIN_LOG_IN_BTN, NAV_OCI_JOB_LISTINGS, TAB_SCHEDULE } from '@config/selectors';
+import { loginAsAdmin } from '@fixtures/test';
+import { NAV_OCI_JOB_LISTINGS, TAB_SCHEDULE } from '@config/selectors';
+import { URLS } from '@config/environments';
 
-test("LoadTesting - Admin - TC72143", async ({ page, context }) => {
-  await test.step(`Setup`, async () => {
-    await page.goto('https://e2e-tests-business.admin.qa-12twenty.com/dashboard', {timeout: 90000});
-    await page.waitForTimeout(4000);
-  });
-
-  await test.step(`Load auth session`, async () => {
-    await loadAuthCookies(context, page);
-    await page.waitForTimeout(4000);
-    await page.reload();
-  });
-
-  await test.step(`Fill password`, async () => {
-    await page.locator("//INPUT[@type='password'][@placeholder='Password'][@name='Password']").nth(0).fill("eQ%DEx%j6Cl9");
-  });
-
-  await test.step(`Click "Admin Log In"`, async () => {
-    await page.locator(ADMIN_LOG_IN_BTN).nth(0).click();
-    await page.waitForLoadState('load');
-  });
-
-  await test.step(`Hover "Admin #"`, async () => {
-    await page.locator("//SPAN[contains(text(),\"Admin #\")]").nth(0).hover();
+test("LoadTesting - Admin - TC72143", async ({ page }) => {
+  await test.step(`Setup & Login`, async () => {
+    await page.goto(URLS.campusWideAdmin, { timeout: 90000 });
+    await loginAsAdmin(page);
   });
 
   await test.step(`Click "OCI and Job Listings"`, async () => {
